@@ -17,7 +17,7 @@
 
             <div class="clearfix"></div>
         </div>
-        <span>@ViewBag.Success</span>
+        <span >@ViewBag.Status</span>
         <h2>Registration</h2>
         <div class="registration-grids">
             <div class="reg-form">
@@ -29,18 +29,18 @@
                         @Html.AntiForgeryToken()
 
                         <ul>
-                            <li class="text-info">Full Name: </li>
+                            <li class="text-info">@Html.DisplayNameFor(model => model.FullName):</li>
                             <li>@Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })</li>
                             @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
                         </ul>
 
                         <ul>
-                            <li class="text-info">Email: </li>
+                            <li class="text-info">@Html.DisplayNameFor(model => model.Email): </li>
                             <li>@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })</li>
                             @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                         </ul>
                         <ul>
-                            <li class="text-info">Password: </li>
+                            <li class="text-info">@Html.DisplayNameFor(model => model.Password): </li>
                             <li>@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })</li>
                             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                         </ul>

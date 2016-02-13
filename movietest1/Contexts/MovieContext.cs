@@ -1,4 +1,5 @@
-﻿using System;
+﻿using movietest1.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -8,6 +9,8 @@ namespace movietest1.Contexts
 {
     public class MovieContext : DbContext
     {
-        public DbSet<movietest1.Models.Account> Accounts { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+
+        public DbSet<Movie> Movies { get; set; }
     }
 }

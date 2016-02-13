@@ -1,0 +1,78 @@
+﻿@model movietest1.Models.Movie
+@using movietest1.OtherClasses
+@{
+    ViewBag.Title = "Add a Movie";
+}
+<!-- Movie Add -form -->
+<div class="registration-form">
+    <div class="container">
+        <div class="dreamcrub">
+            <ul class="breadcrumbs">
+                <li class="home">
+                    <a href="@Url.Action("Index","Home")" title="Go to Home Page">Home</a>&nbsp;
+                    <span>&gt;</span>
+                </li>
+                <li class="women">
+                    Add Movies(Admin)
+                </li>
+            </ul>
+
+
+
+            <div class="clearfix"></div>
+        </div>
+        <span>@ViewBag.Status</span>
+        <h2>Registration</h2>
+        <div class="registration-grids">
+            <div class="">
+                <div class="reg">
+                    <p>Welcome, To Add a movie enter all the fields with genres also,By giving a large description will make user easier to understand</p>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        
+                        @Html.HiddenFor(model => model.key,
+                     new { id = "hiddenRole", Value = IdGenerator.Generate(10) })
+                        
+                        <ul>
+                            <li class="text-info">@Html.DisplayNameFor(model => model.Title)</li>
+                            <li>@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })</li>
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </ul>
+                        
+                        <ul>
+                            <li class="text-info" >@Html.DisplayNameFor(model => model.Description): </li>
+                            <li>@Html.TextAreaFor(model => model.Description, 
+                            htmlAttributes : new { @class = "form-control",rows="10" } )</li>
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </ul>
+                        <ul>
+                            <li class="text-info">ReleaseDate: </li>
+                            <li>@Html.EditorFor(model => model.ReleaseDate, new { htmlAttributes = new { @class = "form-control" } })</li>
+                            @Html.ValidationMessageFor(model => model.ReleaseDate, "", new { @class = "text-danger" })
+                        </ul>
+                        <ul>
+                            <li class="text-info">Casts:</li>
+                            <li>@Html.EditorFor(model => model.Casts, new { htmlAttributes = new { @class = "form-control" } })</li>
+                            @Html.ValidationMessageFor(model => model.Casts, "", new { @class = "text-danger" })
+                        </ul>
+
+                        <ul>
+                            <li class="text-info">Genre:</li>
+                            <li>@Html.EditorFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control" } })</li>
+                            @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
+                        </ul>
+
+                        <input type="submit" value="SUBMIT">
+                        
+                    }
+                </div>
+            </div>
+            
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- Movie Add-form -->
+

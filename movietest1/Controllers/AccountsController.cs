@@ -54,7 +54,7 @@ namespace movietest1.Controllers
 
             if(find(rvm.Email)!=null)
             {
-                ViewBag.Success = "Email already exists,please choose another one";
+                ViewBag.Status = "Email already exists,please choose another one";
                 return View(rvm);
 
             }
@@ -64,11 +64,11 @@ namespace movietest1.Controllers
             {
                 db.Accounts.Add(recieved);
                 db.SaveChanges();
-                ViewBag.Success = "Account Successfully created";
+                ViewBag.Status = "Account Successfully created";
                 return View();
             }
 
-            ViewBag.Success = "Can't Create account There might be some problems";
+            ViewBag.Status = "Can't Create account There might be some problems";
             return View(rvm);
         }
 
