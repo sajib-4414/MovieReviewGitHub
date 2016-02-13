@@ -65,6 +65,25 @@ namespace movietest1.Controllers
             return View(rvm);
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginViewModel lvm)
+        {
+            bool tag = db.Accounts.Any(acc => acc.Email.Equals(lvm.Email) && acc.Password.Equals(lvm.Password));
+            if(tag==true)
+            {
+                ViewBag.Status = "Login Successfull,data found";
+                return View();
+            }
+
+            ViewBag.Status = "Username or Password is not matched";
+            return View();
+        }
+
         // GET: Accounts/Edit/5
         public ActionResult Edit(string id)
         {
