@@ -52,7 +52,13 @@ namespace movietest1.Controllers
         public ActionResult Register(RegisterViewModel rvm)
         {
 
-            
+            if(find(rvm.Email)!=null)
+            {
+                ViewBag.Success = "Email already exists,please choose another one";
+                return View(rvm);
+
+            }
+
             Account recieved = new Account { FullName = rvm.FullName, Email = rvm.Email, ID = IdGenerator.Generate(10), Password = rvm.Password, Role = rvm.Role };//
             if (ModelState.IsValid)
             {
@@ -62,6 +68,7 @@ namespace movietest1.Controllers
                 return View();
             }
 
+            ViewBag.Success = "Can't Create account There might be some problems";
             return View(rvm);
         }
 
@@ -73,6 +80,8 @@ namespace movietest1.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel lvm)
         {
+            
+
             bool tag = db.Accounts.Any(acc => acc.Email.Equals(lvm.Email) && acc.Password.Equals(lvm.Password));
             if(tag==true)
             {
@@ -148,6 +157,12 @@ namespace movietest1.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public Account find(string email)
+        {
+            //For using first or default it will either return null or the account
+            return db.Accounts.Where(acc => acc.Email.Equals(email)).FirstOrDefault();
         }
     }
 }
