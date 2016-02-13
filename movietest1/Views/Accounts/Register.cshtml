@@ -17,13 +17,13 @@
 
             <div class="clearfix"></div>
         </div>
-        <h2>@ViewBag.Success</h2>
+        <span>@ViewBag.Success</span>
         <h2>Registration</h2>
         <div class="registration-grids">
             <div class="reg-form">
                 <div class="reg">
                     <p>Welcome, please enter the following details to continue.</p>
-                    <p>If you have previously registered with us, <a href="#">click here</a></p>
+                    <p>If you have previously registered with us, <a href="@Url.Action("Login","Accounts")">click here</a></p>
                     @using (Html.BeginForm())
                     {
                         @Html.AntiForgeryToken()
