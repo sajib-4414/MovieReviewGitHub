@@ -27,7 +27,7 @@
             <div class="">
                 <div class="reg">
                     <p>Welcome, To Add a movie enter all the fields with genres also,By giving a large description will make user easier to understand</p>
-                    @using (Html.BeginForm())
+                    @using (Html.BeginForm("Add", "Movies", FormMethod.Post, new { enctype = "multipart/form-data" }))
                     {
                         @Html.AntiForgeryToken()
                         @Html.HiddenFor(model => model.key,
@@ -76,7 +76,11 @@
 
                         <ul>
                             <li class="text-info">Uplad an Image:</li>
-                            <li>@Html.EditorFor(model => model.image, new { htmlAttributes = new { @class = "form-control" } })</li>
+                            <li>@*Just setting a default value for skipping model errors*@
+                                @Html.HiddenFor(model => model.image,
+                     new { id = "hiddenRole", Value = "default" })
+                            <img id="preview" src="placeholder.png" style="display:none" height="200px" width="200px" />
+                 <input type="file" name="file" onchange="previewImage(this)" accept="image/*" /></li>
                             @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })
                         </ul>
                         
@@ -93,3 +97,27 @@
 </div>
 <!-- Movie Add-form -->
 
+@*Script for Loading Image PReview Before Upload*@
+<script type="text/javascript">
+
+    function previewImage(input) {
+        var preview = document.getElementById('preview');
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                preview.style.display = "block";
+                preview.setAttribute('src', e.target.result);
+
+            }
+            reader.readAsDataURL(input.files[0]);
+
+
+        } else {
+            preview.style.display = "none";
+            preview.setAttribute('src', 'placeholder.png');
+
+
+        }
+    }
+</script>

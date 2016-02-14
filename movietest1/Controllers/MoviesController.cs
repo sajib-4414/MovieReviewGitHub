@@ -67,11 +67,64 @@ namespace movietest1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add( Movie movie)
+        public ActionResult Add(Movie movie, HttpPostedFileBase file)
         {
-            //movie.ID = IdGenerator.Generate(10);
+            //code for image
+            string filepathtosave;
+            try
+            {
+                if (file != null)
+                {
+                    int byteCount = file.ContentLength;
+                    if (byteCount > 200000)
+                    {
+                        ViewBag.Error = "Can't Upload images more than 200KB";
+                        return View(movie);
+                    }
+                }
+
+                /*Geting the file name*/
+                string filename = System.IO.Path.GetFileName(file.FileName);
+                //removing whitespaces
+                filename = filename.ToCharArray()
+                 .Where(c => !Char.IsWhiteSpace(c))
+                 .Select(c => c.ToString())
+                 .Aggregate((a, b) => a + b);
+
+                //checking directory is there or not if not create it
+                string subPath = "~/Images/Movies/"; // your code goes here
+
+                bool exists = System.IO.Directory.Exists(Server.MapPath(subPath));
+
+                if (!exists)
+                    System.IO.Directory.CreateDirectory(Server.MapPath(subPath));
+                //finishing of directory creating
+
+
+                /*Saving the file in server folder*/
+                file.SaveAs(Server.MapPath("~/Images/Movies/" + filename));
+                filepathtosave = "/Images/Movies/" + filename;
+                /*Storing image path to show preview*/
+                // ViewBag.ImageURL = filepathtosave;
+                /*
+                 * HERE WILL BE YOUR CODE TO SAVE THE FILE DETAIL IN DATA BASE
+                 *
+                 */
+
+                //ViewBag.Message = "File Uploaded successfully.";
+            }
+            catch
+            {
+                ViewBag.Status = "Error in uploading image,please try again";
+                return View(movie);
+            }
+
+            //ending of code for image
+
+
             if (ModelState.IsValid)
             {
+                movie.image = filepathtosave;
                 db.Movies.Add(movie);
                 db.SaveChanges();
                 ViewBag.Status = "Movie was added successfully";
