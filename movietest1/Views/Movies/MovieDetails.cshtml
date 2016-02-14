@@ -89,7 +89,18 @@
                 </div>
                 
                 <div class="purchase">
-                    <a href="#">Download Now</a>
+                    @{
+                        if (Model.DownloadLink == null)
+                        {
+                            <span>Downloaded Link will be added Soon</span>
+                        }
+                        else
+                        {
+                            <a href=@Model.DownloadLink >Download Now</a>
+                        }
+                    }
+                    
+                    
                     <div class="social-icons">
                         <ul>
                             <li><a class="facebook1" href="#"></a></li>

@@ -29,6 +29,9 @@ namespace movietest1.Models
         [Required]
         public string Genre { get; set; }
 
+        
+        public string DownloadLink { get; set; }
+        
         [Required]
         public string image { get; set; }
 

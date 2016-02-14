@@ -146,6 +146,10 @@
     <Compile Include="Migrations\201602141459321_addedrequiredonMovie.Designer.cs">
       <DependentUpon>201602141459321_addedrequiredonMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602141823378_addedDownloadlinktoMovie.cs" />
+    <Compile Include="Migrations\201602141823378_addedDownloadlinktoMovie.Designer.cs">
+      <DependentUpon>201602141823378_addedDownloadlinktoMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -272,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602141459321_addedrequiredonMovie.resx">
       <DependentUpon>201602141459321_addedrequiredonMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602141823378_addedDownloadlinktoMovie.resx">
+      <DependentUpon>201602141823378_addedDownloadlinktoMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
