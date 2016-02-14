@@ -37,6 +37,21 @@ namespace movietest1.Controllers
             return View(movie);
         }
 
+        public ActionResult MovieDetails(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Movie movie = db.Movies.Find(id);
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+            return View(movie);
+            //return View();
+        }
+
         // GET: Movies/Create
         public ActionResult Create()
         {

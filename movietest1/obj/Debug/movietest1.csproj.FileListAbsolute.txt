@@ -59,9 +59,9 @@ H:\MovieReviewGitHub\movietest1\bin\Antlr3.Runtime.pdb
 H:\MovieReviewGitHub\movietest1\bin\Newtonsoft.Json.xml
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.initialMigration.resources
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedmovieclass.resources
-H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.csproj.GenerateResource.Cache
-H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.dll
-H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.pdb
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.correctedmovie.resources
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedImagetoMovie.resources
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedrequiredonMovie.resources
+H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.csproj.GenerateResource.Cache
+H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.dll
+H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.pdb
