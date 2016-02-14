@@ -63,3 +63,6 @@ H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.csproj.GenerateResource.Cac
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.dll
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.pdb
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.correctedmovie.resources
+H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.csprojResolveAssemblyReference.cache
+H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedImagetoMovie.resources
+H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedrequiredonMovie.resources

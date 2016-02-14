@@ -30,8 +30,6 @@
                     @using (Html.BeginForm())
                     {
                         @Html.AntiForgeryToken()
-
-                        
                         @Html.HiddenFor(model => model.key,
                      new { id = "hiddenRole", Value = IdGenerator.Generate(10) })
                         
@@ -76,6 +74,13 @@
                             @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
                         </ul>
 
+                        <ul>
+                            <li class="text-info">Uplad an Image:</li>
+                            <li>@Html.EditorFor(model => model.image, new { htmlAttributes = new { @class = "form-control" } })</li>
+                            @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })
+                        </ul>
+                        
+                        
                         <input type="submit" value="SUBMIT">
                         
                     }

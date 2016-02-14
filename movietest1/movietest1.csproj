@@ -138,6 +138,14 @@
     <Compile Include="Migrations\201602132034245_correctedmovie.Designer.cs">
       <DependentUpon>201602132034245_correctedmovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602141458264_addedImagetoMovie.cs" />
+    <Compile Include="Migrations\201602141458264_addedImagetoMovie.Designer.cs">
+      <DependentUpon>201602141458264_addedImagetoMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602141459321_addedrequiredonMovie.cs" />
+    <Compile Include="Migrations\201602141459321_addedrequiredonMovie.Designer.cs">
+      <DependentUpon>201602141459321_addedrequiredonMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -256,6 +264,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602132034245_correctedmovie.resx">
       <DependentUpon>201602132034245_correctedmovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602141458264_addedImagetoMovie.resx">
+      <DependentUpon>201602141458264_addedImagetoMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602141459321_addedrequiredonMovie.resx">
+      <DependentUpon>201602141459321_addedrequiredonMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
