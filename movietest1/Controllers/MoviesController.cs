@@ -22,6 +22,12 @@ namespace movietest1.Controllers
             return View(db.Movies.ToList());
         }
 
+        public ActionResult MoviesIndex()
+        {
+            //return View();
+            return View(db.Movies.ToList());
+        }
+
         // GET: Movies/Details/5
         public ActionResult Details(int? id)
         {

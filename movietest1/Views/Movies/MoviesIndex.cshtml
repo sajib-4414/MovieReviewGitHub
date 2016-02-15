@@ -1,14 +1,43 @@
-﻿
+﻿@model IEnumerable<movietest1.Models.Movie>
+
+@{
+    ViewBag.Title = "Movie Home";
+}
 <!-- content-section-starts-here -->
 <div class="container">
     <div class="main-content">
-        
+
         <div class="products-grid">
             <header>
-                <h3 class="head text-center">Latest Products</h3>
+                <h3 class="head text-center">All Products</h3>
             </header>
+
+            @foreach (var item in Model)
+            {
+                
+                <div class="col-md-3 product simpleCart_shelfItem text-center">
+                    <a href="single.html"><img src="@item.image" height="250" width="100" alt="" onerror="this.onerror=null;this.src='/images/Movies/noimg.png';" /></a>
+                    <div class="mask">
+                        @Html.ActionLink("Quick View", "MovieDetails", new { id = item.key })
+                        
+                    </div>
+                    @Html.ActionLink(item.Title, "MovieDetails", new { id = item.key }, htmlAttributes: new { @class="product_name"})
+                    @*<a class="product_name" href="single.html">Sed ut perspiciatis</a>*@
+                    <p><a class="item_add" href="#"><i></i> <span class="item_price">$329</span></a></p>
+                </div>
+            }
+
+
+
+
+
+            
+
+
+
+
             <div class="col-md-3 product simpleCart_shelfItem text-center">
-                <a href="single.html"><img src="~/images/p1.jpg" height="250" width="100"  alt="" /></a>
+                <a href="single.html"><img src="~/images/p1.jpg" height="250" width="100" alt="" /></a>
                 <div class="mask">
                     <a href="single.html">Quick View</a>
                 </div>
@@ -48,7 +77,7 @@
                 <p><a class="item_add" href="#"><i></i> <span class="item_price">$750</span></a></p>
             </div>
             <div class="col-md-3 product simpleCart_shelfItem text-center">
-                <a href="single.html"><img src="~/images/p6.jpg" height="250" width="100"  alt="" /></a>
+                <a href="single.html"><img src="~/images/p6.jpg" height="250" width="100" alt="" /></a>
                 <div class="mask">
                     <a href="single.html">Quick View</a>
                 </div>
@@ -82,7 +111,13 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    
+
 </div>
 
 <!-- content-section-ends-here -->
+
+@*<script>
+    $("#myimg").error(function () {
+        $("#myimg").attr("src", "/images/Movies/noimg.png");
+    });
+</script>*@

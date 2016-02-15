@@ -62,7 +62,7 @@ H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedmovieclass.
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.correctedmovie.resources
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedImagetoMovie.resources
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedrequiredonMovie.resources
+H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedDownloadlinktoMovie.resources
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.csproj.GenerateResource.Cache
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.dll
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.pdb
-H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedDownloadlinktoMovie.resources
