@@ -66,3 +66,4 @@ H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedDownloadlin
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.csproj.GenerateResource.Cache
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.dll
 H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.pdb
+H:\MovieReviewGitHub\movietest1\obj\Debug\movietest1.csprojResolveAssemblyReference.cache
