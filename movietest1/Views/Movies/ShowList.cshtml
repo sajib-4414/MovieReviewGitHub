@@ -2,7 +2,9 @@
 @{
     ViewBag.Title = "ShowList";
 }
-
+<span class="danger">
+    @ViewBag.Error
+</span>
 <div class="registration-form">
     <div class="container">
         <div class="registration-grids">
@@ -38,20 +40,20 @@
                                     </tr>
                                     
                                 </table>
+                                <div class="btn-block ">
+                                    <a href="#" class="btn btn-primary " style="width:120px">Edit</a>
+                                    @using (Html.BeginForm("Delete", "Movies", new { id = item.key }, FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
 
+                                        <button type="submit" class="btn btn-danger " style="width:120px" onclick="return confirm('Are you sure you want to delete?');">Delete</button>
+                                    }
+
+
+                                </div>
                                 
                             </div>
-                            <div class="btn-block ">
-                                <a href="#" class="btn btn-primary " style="width:120px">Edit</a>
-                                @using (Html.BeginForm("Delete", "Movies",new{ id=item.key}, FormMethod.Post))
-                                {
-                                    @Html.AntiForgeryToken()
-                                    
-                                    <button type="submit" class="btn btn-danger " style="width:120px" onclick="return confirm('Are you sure you want to delete?');">Delete</button>
-                                }
-                                
-
-                            </div>
+                       
                         </div>
 
                     }

@@ -214,6 +214,12 @@ namespace movietest1.Controllers
             try // log all exceptions
             {
                 Movie movie = db.Movies.Find(id);
+                string fullPath = Request.MapPath("~"+movie.image);
+                if (System.IO.File.Exists(fullPath))
+                {
+                    System.IO.File.Delete(fullPath);
+                }
+
                 db.Movies.Remove(movie);
                 db.SaveChanges();
                 return RedirectToAction("ShowList");
@@ -223,6 +229,7 @@ namespace movietest1.Controllers
                 // All exceptions are written into Debug.
                 //click show output from debug to see it
                 Debug.WriteLine(x.ToString());
+                ViewBag.Error = "Couldn't remove data";
                 return RedirectToAction("ShowList");
                
             }
