@@ -19,24 +19,24 @@ namespace movietest1.Controllers
 
             return View();
         }
-        public ActionResult Products()
-        {
-            ViewBag.Message = "Your application description page.";
+        //public ActionResult Products()
+        //{
+        //    ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
-        public ActionResult Account()
-        {
-            ViewBag.Message = "Your application description page.";
+        //    return View();
+        //}
+        //public ActionResult Account()
+        //{
+        //    ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
-        public ActionResult Single()
-        {
-            ViewBag.Message = "Your application description page.";
+        //    return View();
+        //}
+        //public ActionResult Single()
+        //{
+        //    ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+        //    return View();
+        //}
        
 
         public ActionResult Contact()

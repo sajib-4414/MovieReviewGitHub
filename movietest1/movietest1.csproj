@@ -251,6 +251,7 @@
     <Content Include="Views\Movies\MovieDetails.cshtml" />
     <Content Include="Views\Movies\MoviesIndex.cshtml" />
     <Content Include="Views\Movies\ShowList.cshtml" />
+    <Content Include="Views\Movies\EditMovie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
