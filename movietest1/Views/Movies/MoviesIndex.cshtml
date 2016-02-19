@@ -9,7 +9,7 @@
 
         <div class="products-grid">
             <header>
-                <h3 class="head text-center">All Products</h3>
+                <h3 class="head text-center">All Movies</h3>
             </header>
 
             @foreach (var item in Model)
@@ -22,7 +22,7 @@
                             var x = "#" + item.key;
                             //this is for assigning data target to the button ,id will be post key
                         }
-                        <a data-toggle="modal" data-target=@x>Quick View</a>
+                        <a href="#" data-toggle="modal" data-target=@x>Quick View</a>
                         @*So we are passing actually #id where id is assigned as the key value of the post*@
                     </div>
                     @Html.ActionLink(item.Title, "MovieDetails", new { id = item.key }, htmlAttributes: new { @class="product_name"})

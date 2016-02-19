@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using movietest1.Contexts;
 using movietest1.Models;
 using movietest1.OtherClasses;
+using System.Diagnostics;
 
 namespace movietest1.Controllers
 {
@@ -23,6 +24,11 @@ namespace movietest1.Controllers
         }
 
         public ActionResult MoviesIndex()
+        {
+            //return View();
+            return View(db.Movies.ToList());
+        }
+        public ActionResult ShowList()//its for admin,he will see the list and update or delete the data from it
         {
             //return View();
             return View(db.Movies.ToList());
@@ -203,12 +209,25 @@ namespace movietest1.Controllers
         // POST: Movies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
-            Movie movie = db.Movies.Find(id);
-            db.Movies.Remove(movie);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try // log all exceptions
+            {
+                Movie movie = db.Movies.Find(id);
+                db.Movies.Remove(movie);
+                db.SaveChanges();
+                return RedirectToAction("ShowList");
+            }
+            catch (Exception x)
+            {
+                // All exceptions are written into Debug.
+                //click show output from debug to see it
+                Debug.WriteLine(x.ToString());
+                return RedirectToAction("ShowList");
+               
+            }
+            
+            
         }
 
         protected override void Dispose(bool disposing)
