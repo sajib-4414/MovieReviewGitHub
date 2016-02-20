@@ -3,6 +3,10 @@
 @{
     ViewBag.Title = "Add a Movie";
 }
+
+<link href="~/Content/toastr.min.css" rel="stylesheet" />
+<script src="~/Scripts/toastr.min.js"></script>
+
 <!-- Movie Add -form -->
 <div class="registration-form">
     <div class="container">
@@ -21,7 +25,14 @@
 
             <div class="clearfix"></div>
         </div>
-        <span>@ViewBag.Status</span>
+        @{
+            if (@ViewBag.Status == "Movie was added successfully")
+            {
+             
+                 <script>toastr.success('Movie Added Successfully','Successful');</script>
+            }
+        }
+        
         <h2>Add Movie</h2>
         <div class="registration-grids">
             <div class="">
