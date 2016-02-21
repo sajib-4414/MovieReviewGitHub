@@ -103,3 +103,4 @@ H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.ad
 H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.csproj.GenerateResource.Cache
 H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.dll
 H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.pdb
+H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addednamepositionAndIndustry.resources

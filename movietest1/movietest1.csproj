@@ -150,9 +150,14 @@
     <Compile Include="Migrations\201602141823378_addedDownloadlinktoMovie.Designer.cs">
       <DependentUpon>201602141823378_addedDownloadlinktoMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602211629248_addednamepositionAndIndustry.cs" />
+    <Compile Include="Migrations\201602211629248_addednamepositionAndIndustry.Designer.cs">
+      <DependentUpon>201602211629248_addednamepositionAndIndustry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="OtherClasses\SetNamePosition.cs" />
     <Compile Include="OtherClasses\IdGenerator.cs" />
     <Compile Include="OtherClasses\StringExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -288,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602141823378_addedDownloadlinktoMovie.resx">
       <DependentUpon>201602141823378_addedDownloadlinktoMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602211629248_addednamepositionAndIndustry.resx">
+      <DependentUpon>201602211629248_addednamepositionAndIndustry.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -68,6 +68,17 @@
                         </ul>
 
                         <ul>
+                            <li class="text-info">Industry:</li>
+                            <li>@Html.DropDownListFor(x => x.Industry, new List<SelectListItem>
+                            {
+                             new SelectListItem() {Text = "Hollywood", Value="hollywood"},
+                             new SelectListItem() {Text = "Hindi", Value="hindi"},
+                                new SelectListItem() {Text = "Tamil", Value="tamil"}
+                            }, htmlAttributes: new { @class = "form-control" }) </li>
+                            @Html.ValidationMessageFor(model => model.Industry, "", new { @class = "text-danger" })
+                        </ul>
+
+                        <ul>
                             <li class="text-info">Genre:</li>
                             <li>@Html.DropDownListFor(x => x.Genre, new List<SelectListItem>
                             {
@@ -79,12 +90,13 @@
                                 new SelectListItem() {Text = "Horror", Value="Horror"},
                                 new SelectListItem() {Text = "Mystery", Value="Mystery"},
                                 new SelectListItem() {Text = "Romance", Value="Romance"},
-                  new SelectListItem() {Text = "Sceince Fiction", Value="Sceince Fiction"},
+                  new SelectListItem() {Text = "Science Fiction", Value="Science Fiction"},
                                 new SelectListItem() {Text = "Thriller", Value="Thriller"},
                             }, htmlAttributes: new { @class = "form-control" }) </li>
                             @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
                         </ul>
-
+                        
+                        
                         <ul>
                             <li class="text-info">Download Link:</li>
                             <li>@Html.EditorFor(model => model.DownloadLink, new { htmlAttributes = new { @class = "form-control" } })</li>
@@ -95,6 +107,8 @@
                             <li class="text-info">Uplad an Image:</li>
                             <li>@*Just setting a default value for skipping model errors*@
                                 @Html.HiddenFor(model => model.image,
+                     new { id = "hiddenRole", Value = "default" })
+                                @Html.HiddenFor(model => model.NamePosition,
                      new { id = "hiddenRole", Value = "default" })
                             <img id="preview" src="placeholder.png" style="display:none" height="200px" width="200px" />
                  <input type="file" name="file" onchange="previewImage(this)" accept="image/*" /></li>

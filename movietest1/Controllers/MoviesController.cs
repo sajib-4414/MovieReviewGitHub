@@ -148,6 +148,8 @@ namespace movietest1.Controllers
 
             //ending of code for image
 
+            //adding name position
+            movie.NamePosition = SetNamePosition.Set(movie.Title);
 
             if (ModelState.IsValid)
             {

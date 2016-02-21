@@ -29,7 +29,12 @@ namespace movietest1.Models
         [Required]
         public string Genre { get; set; }
 
-        
+        [Required]
+        public string Industry { get; set; }
+
+        [Required]
+        public string NamePosition { get; set; }
+
         public string DownloadLink { get; set; }
         
         [Required]
