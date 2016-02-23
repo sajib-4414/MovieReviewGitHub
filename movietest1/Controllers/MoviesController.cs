@@ -28,9 +28,10 @@ namespace movietest1.Controllers
             //return View();
             return View(db.Movies.ToList());
         }
-        public ActionResult ShowList()//its for admin,he will see the list and update or delete the data from it
+        public ActionResult ShowList(string message)//its for admin,he will see the list and update or delete the data from it
         {
             //return View();
+            ViewBag.message = message;
             return View(db.Movies.ToList());
         }
 
@@ -240,14 +241,16 @@ namespace movietest1.Controllers
             }
 
             //ending of code for image
-            
+            //adding name position
+            movie.NamePosition = SetNamePosition.Set(movie.Title);
+
             if (ModelState.IsValid)
-            {
+           {
                 movie.image = filepathtosave;
                 db.Entry(movie).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("ShowList");
-            }
+                return RedirectToAction("ShowList", new { message = "addSuccess" });
+           }
             ViewBag.Status = "Editing failed,please try again";
             return View(movie);
         }
