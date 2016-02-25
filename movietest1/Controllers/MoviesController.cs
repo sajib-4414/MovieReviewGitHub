@@ -200,8 +200,9 @@ namespace movietest1.Controllers
                 }
                 else
                 {
-                    ViewBag.Status = "Image upload hoy nai";
-                    return View(movie);
+                    //ViewBag.Status = "Image upload hoy nai";
+                    //return View(movie);
+                    goto noedit;
                 }
 
                 /*Geting the file name*/
@@ -241,12 +242,16 @@ namespace movietest1.Controllers
             }
 
             //ending of code for image
+            //now setting image path
+            movie.image = filepathtosave;
+
+            noedit://for the GOTO statement
             //adding name position
             movie.NamePosition = SetNamePosition.Set(movie.Title);
 
             if (ModelState.IsValid)
            {
-                movie.image = filepathtosave;
+                
                 db.Entry(movie).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("ShowList", new { message = "addSuccess" });

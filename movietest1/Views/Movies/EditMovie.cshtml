@@ -88,10 +88,11 @@
                             <li class="text-info">Uplad an Image:</li>
                             <li>
                                 @*Just setting a default value for skipping model errors*@
-                                @Html.HiddenFor(model => model.image,
-                     new { id = "hiddenRole", Value = "default" })
-                                <img id="preview" src="placeholder.png" style="display:none" height="200px" width="200px" />
-                                <input type="file" name="file" onchange="previewImage(this)" accept="image/*" data-parsley-max-file-size="400"  required="" />
+                                @Html.HiddenFor(model => model.image)
+
+                                <img id="preview" src=@Model.image  height="200px" width="200px" />
+                                <br />
+                                <input id="cbutton" type="button" value="Change image"/>
                             </li>
                             
                         </ul>
@@ -112,20 +113,21 @@
 <script type="text/javascript">
 
     function previewImage(input) {
+        
         var preview = document.getElementById('preview');
 
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-                preview.style.display = "block";
+                
                 preview.setAttribute('src', e.target.result);
 
             }
             reader.readAsDataURL(input.files[0]);
-
+            
 
         } else {
-            preview.style.display = "none";
+            
             preview.setAttribute('src', 'placeholder.png');
 
 
@@ -155,5 +157,20 @@
             en: 'This file should not be larger than %s Kb',
             fr: "Ce fichier est plus grand que %s Kb."
         }
+    });
+</script>
+<script type='text/javascript'>
+    $(document).ready(function () {
+
+        $('#cbutton').click(function () {
+            $('#cbutton').after('<input type="file" name="file" id="file" onchange="previewImage(this)" accept="image/*" data-parsley-max-file-size="400"  required="" />');
+            $('#file').click();
+            
+            $('#cbutton').hide();
+           // alert("hello");
+            
+
+        });
+
     });
 </script>
