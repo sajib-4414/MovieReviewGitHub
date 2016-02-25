@@ -84,26 +84,62 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="col-sm-6">
                                         <ul class="multi-column-dropdown">
                                             <h6>Movie by Category</h6>
-                                            <li><a href="#">Action</a></li>
-                                            <li><a href="#">Adventure</a></li>
-                                            <li><a href="#">Comedy</a></li>
-                                            <li><a href="#">Crime</a></li>
-                                            <li><a href="#">Historical</a></li>
-                                            <li><a href="#">Horror</a></li>
-                                            <li><a href="#">Mystery</a></li>
-                                            <li><a href="#">Romance</a></li>
-                                            <li><a href="#">Science Fiction</a></li>
-                                            <li><a href="#">Thriller</a></li>
+                                        
+                                            <li>
+                                                @Html.ActionLink("Action", "MoviesIndex", "Movies",
+                new { industry = "hollywood", genreOrname = "Action", i = 0 }, null)
+                                            </li>
+
+                                            <li>
+                                                @Html.ActionLink("Comedy", "MoviesIndex", "Movies", new { industry = "hollywood", genreOrname = "Comedy", i = 0 }, null)
+                                            </li>
+
+                                            <li>
+                                                @Html.ActionLink("Crime", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "Crime", i = 0 }, null)
+                                            </li>
+
+                                            <li>
+                                                @Html.ActionLink("Historical", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "Historical", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Horror", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "Horror", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Mystery", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "Mystery", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Romance", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "Romance", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Science Fiction", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "Science Fiction", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Thriller", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "Thriller", i = 0 }, null)
+
+                                            </li>  
                                         </ul>
                                     </div>
                                     <div class="col-sm-6">
                                         <ul class="multi-column-dropdown">
                                             <h6>Films By Name</h6>
-                                            <li><a href="#">A-E</a></li>
-                                            <li><a href="#">F--J</a></li>
-                                            <li><a href="#">K-O</a></li>
-                                            <li><a href="#">P-T</a></li>
-                                            <li><a href="products.html">U-Z</a></li>
+                                            
+                                            <li>@Html.ActionLink("A-E", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "AE", i = 1 }, null)</li>
+                                            <li>@Html.ActionLink("F-J", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "FJ", i = 1 }, null)</li>
+                                            <li>@Html.ActionLink("K-O", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "KO", i = 1 }, null)</li>
+                                            <li>@Html.ActionLink("P-T", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "PT", i = 1 }, null)</li>
+                                            <li>@Html.ActionLink("U-Z", "MoviesIndex", "Movies",
+                         new { industry = "hollywood", genreOrname = "UZ", i = 1 }, null)</li>
                                             
                                         </ul>
                                     </div>
@@ -119,26 +155,70 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="col-sm-6">
                                         <ul class="multi-column-dropdown">
                                             <h6>Movie by Category</h6>
-                                            <li><a href="#">Action</a></li>
-                                            <li><a href="#">Adventure</a></li>
-                                            <li><a href="#">Comedy</a></li>
-                                            <li><a href="#">Crime</a></li>
-                                            <li><a href="#">Historical</a></li>
-                                            <li><a href="#">Horror</a></li>
-                                            <li><a href="#">Mystery</a></li>
-                                            <li><a href="#">Romance</a></li>
-                                            <li><a href="#">Science Fiction</a></li>
-                                            <li><a href="#">Thriller</a></li>
+                                            <li>
+                                                @Html.ActionLink("Action", "MoviesIndex", "Movies",
+                new { industry = "hindi", genreOrname = "Action", i = 0 }, null)
+                                            </li>
+
+                                            <li>
+                                                @Html.ActionLink("Comedy", "MoviesIndex", "Movies", new { industry = "hindi", genreOrname = "Comedy", i = 0 }, null)
+                                            </li>
+
+                                            <li>
+                                                @Html.ActionLink("Crime", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "Crime", i = 0 }, null)
+                                            </li>
+
+                                            <li>
+                                                @Html.ActionLink("Historical", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "Historical", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Horror", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "Horror", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Mystery", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "Mystery", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Romance", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "Romance", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Science Fiction", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "Science Fiction", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Thriller", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "Thriller", i = 0 }, null)
+
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="col-sm-6">
                                         <ul class="multi-column-dropdown">
                                             <h6>Films By Name</h6>
-                                            <li><a href="#">A-E</a></li>
-                                            <li><a href="#">F--J</a></li>
-                                            <li><a href="#">K-O</a></li>
-                                            <li><a href="#">P-T</a></li>
-                                            <li><a href="products.html">U-Z</a></li>
+                                            <li>
+                                                @Html.ActionLink("A-E", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "AE", i = 1 }, null)
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("F-J", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "FJ", i = 1 }, null)
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("K-O", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "KO", i = 1 }, null)
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("P-T", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "PT", i = 1 }, null)
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("U-Z", "MoviesIndex", "Movies",
+                         new { industry = "hindi", genreOrname = "UZ", i = 1 }, null)
+                                        </li>
 
                                         </ul>
                                     </div>
@@ -154,16 +234,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="col-sm-6">
                                         <ul class="multi-column-dropdown">
                                             <h6>Movie by Category</h6>
-                                            <li><a href="#">Action</a></li>
-                                            <li><a href="#">Adventure</a></li>
-                                            <li><a href="#">Comedy</a></li>
-                                            <li><a href="#">Crime</a></li>
-                                            <li><a href="#">Historical</a></li>
-                                            <li><a href="#">Horror</a></li>
-                                            <li><a href="#">Mystery</a></li>
-                                            <li><a href="#">Romance</a></li>
-                                            <li><a href="#">Science Fiction</a></li>
-                                            <li><a href="#">Thriller</a></li>
+                                            <li>
+                                                @Html.ActionLink("Action", "MoviesIndex", "Movies",
+                new { industry = "tamil", genreOrname = "Action", i = 0 }, null)
+                                            </li>
+
+                                            <li>
+                                                @Html.ActionLink("Comedy", "MoviesIndex", "Movies", new { industry = "tamil", genreOrname = "Comedy", i = 0 }, null)
+                                            </li>
+
+                                            <li>
+                                                @Html.ActionLink("Crime", "MoviesIndex", "Movies",
+                         new { industry = "tamil", genreOrname = "Crime", i = 0 }, null)
+                                            </li>
+
+                                            <li>
+                                                @Html.ActionLink("Historical", "MoviesIndex", "Movies",
+                         new { industry = "tamil", genreOrname = "Historical", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Horror", "MoviesIndex", "Movies",
+                         new { industry = "tamil", genreOrname = "Horror", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Mystery", "MoviesIndex", "Movies",
+                         new { industry = "tamil", genreOrname = "Mystery", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Romance", "MoviesIndex", "Movies",
+                         new { industry = "tamil", genreOrname = "Romance", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Science Fiction", "MoviesIndex", "Movies",
+                         new { industry = "tamil", genreOrname = "Science Fiction", i = 0 }, null)
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Thriller", "MoviesIndex", "Movies",
+                         new { industry = "tamil", genreOrname = "Thriller", i = 0 }, null)
+
+                                            </li>
                                         </ul>
                                     </div>
                                     
@@ -203,18 +312,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     
 
     <div class="news-letter">
-        <div class="container">
-            <div class="join">
-                <h6>JOIN OUR MAILING LIST</h6>
-                <div class="sub-left-right">
-                    <form>
-                        <input type="text" value="Enter Your Email Here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Email Here';}" />
-                        <input type="submit" value="SUBSCRIBE" />
-                    </form>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
+        
     </div>
     <div class="footer">
         <div class="container">

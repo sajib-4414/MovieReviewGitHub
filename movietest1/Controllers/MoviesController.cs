@@ -23,11 +23,26 @@ namespace movietest1.Controllers
         //    return View(db.Movies.ToList());
         //}
 
-        public ActionResult MoviesIndex()//its for public
+        public ActionResult MoviesIndex(string industry, string genreOrname, int i)//its for public
         {
-            //return View();
+
+            if (i == 0)
+            {
+                var posts = db.Movies.Where(a => a.Industry.Equals(industry) && a.Genre.Equals(genreOrname));
+                ViewBag.head = industry+" Movies with "+genreOrname+" Category";
+                return View(posts.ToList());
+            }
+            if (i == 1)
+            {
+                var posts2 = db.Movies.Where(a => a.Industry.Equals(industry) && a.NamePosition.Equals(genreOrname));
+                ViewBag.head = industry + " Movies from " + genreOrname ;
+                return View(posts2.ToList());
+            }
+            ViewBag.head = "All Movies";
             return View(db.Movies.ToList());
         }
+        
+        
         public ActionResult ShowList(string message)//its for admin,he will see the list and update or delete the data from it
         {
             //return View();
