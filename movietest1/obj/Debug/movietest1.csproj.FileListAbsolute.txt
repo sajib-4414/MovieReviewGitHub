@@ -93,7 +93,6 @@ H:\_mvc learning\MovieReviewGitHub\movietest1\bin\System.Web.WebPages.Deployment
 H:\_mvc learning\MovieReviewGitHub\movietest1\bin\System.Web.WebPages.Razor.xml
 H:\_mvc learning\MovieReviewGitHub\movietest1\bin\Antlr3.Runtime.pdb
 H:\_mvc learning\MovieReviewGitHub\movietest1\bin\Newtonsoft.Json.xml
-H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.csprojResolveAssemblyReference.cache
 H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.initialMigration.resources
 H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedmovieclass.resources
 H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.correctedmovie.resources
@@ -104,3 +103,4 @@ H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.csproj.Genera
 H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.dll
 H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.pdb
 H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addednamepositionAndIndustry.resources
+H:\_mvc learning\MovieReviewGitHub\movietest1\obj\Debug\movietest1.Migrations.addedPostTime.resources

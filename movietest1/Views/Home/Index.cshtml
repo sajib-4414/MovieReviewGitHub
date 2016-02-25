@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<movietest1.Models.Movie>
+@{
     ViewBag.Title = "Home";
 }
 
@@ -68,80 +69,70 @@
 
         <div class="products-grid">
             <header>
-                <h3 class="head text-center">Latest Products</h3>
+                <h3 class="head text-center">Latest Movie Uploads</h3>
             </header>
-            <div class="col-md-3 product simpleCart_shelfItem text-center">
-                <a href="single.html"><img src="~/images/p1.jpg" height="250" width="100" alt="" /></a>
-                <div class="mask">
-                    <a href="single.html">Quick View</a>
+            @foreach (var item in Model)
+            {
+
+                <div class="col-md-3 product simpleCart_shelfItem text-center">
+                    <a href="@Url.Action("MovieDetails", "Movies", new { id = item.key })"><img src="@item.image" height="250" width="100" alt="" onerror="this.onerror=null;this.src='/images/Movies/noimg.png';" /></a>
+                    <div class="mask">
+                        @{
+                var x = "#" + item.key;
+                //this is for assigning data target to the button ,id will be post key
+                        }
+                        <a href="#" data-toggle="modal" data-target=@x>Quick View</a>
+                        @*So we are passing actually #id where id is assigned as the key value of the post*@
+                    </div>
+                    @Html.ActionLink(item.Title, "MovieDetails", new { id = item.key }, htmlAttributes: new { @class = "product_name" })
+                    @*<a class="product_name" href="single.html">Sed ut perspiciatis</a>*@
+                    <p><a class="item_add" href="#"><i></i> <span class="item_price">$329</span></a></p>
                 </div>
-                <a class="product_name" href="single.html">Sed ut perspiciatis</a>
-                <p><a class="item_add" href="#"><i></i> <span class="item_price">$329</span></a></p>
-            </div>
-            <div class="col-md-3 product simpleCart_shelfItem text-center">
-                <a href="single.html"><img src="~/images/p2.jpg" height="250" width="100" alt="" /></a>
-                <div class="mask">
-                    <a href="single.html">Quick View</a>
+
+                            <!-- Start of Modal -->
+                      <!-- Modal -->
+                <div class="modal fade" id=@item.key role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">@item.Title</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="@item.image" alt="" onerror="this.onerror=null;this.src='/images/Movies/noimg.png';" class="img-responsive" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <ul class="list-inline">
+                                            <li> <b>Genre :</b> </li>
+                                            <li> @item.Genre</li>
+                                        </ul>
+                                        <ul class="list-inline">
+                                            <li> <b>Casts:</b> </li>
+                                            <li> @item.Casts</li>
+                                        </ul>
+                                        <ul class="list-inline">
+                                            <li> <b>Year of Release:</b> </li>
+                                            <li> @item.ReleaseDate</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <a class="product_name" href="single.html">great explorer</a>
-                <p><a class="item_add" href="#"><i></i> <span class="item_price">$599.8</span></a></p>
-            </div>
-            <div class="col-md-3 product simpleCart_shelfItem text-center">
-                <a href="single.html"><img src="~/images/p3.jpg" height="250" width="100" alt="" /></a>
-                <div class="mask">
-                    <a href="single.html">Quick View</a>
-                </div>
-                <a class="product_name" href="single.html">similique sunt</a>
-                <p><a class="item_add" href="#"><i></i> <span class="item_price">$359.6</span></a></p>
-            </div>
-            <div class="col-md-3 product simpleCart_shelfItem text-center">
-                <a href="single.html"><img src="~/images/p4.jpg" height="250" width="100" alt="" /></a>
-                <div class="mask">
-                    <a href="single.html">Quick View</a>
-                </div>
-                <a class="product_name" href="single.html">shrinking </a>
-                <p><a class="item_add" href="#"><i></i> <span class="item_price">$649.99</span></a></p>
-            </div>
-            <div class="col-md-3 product simpleCart_shelfItem text-center">
-                <a href="single.html"><img src="~/images/p5.jpg" height="250" width="100" alt="" /></a>
-                <div class="mask">
-                    <a href="single.html">Quick View</a>
-                </div>
-                <a class="product_name" href="single.html">perfectly simple</a>
-                <p><a class="item_add" href="#"><i></i> <span class="item_price">$750</span></a></p>
-            </div>
-            <div class="col-md-3 product simpleCart_shelfItem text-center">
-                <a href="single.html"><img src="~/images/p6.jpg" height="250" width="100" alt="" /></a>
-                <div class="mask">
-                    <a href="single.html">Quick View</a>
-                </div>
-                <a class="product_name" href="single.html">equal blame</a>
-                <p><a class="item_add" href="#"><i></i> <span class="item_price">$295.59</span></a></p>
-            </div>
-            <div class="col-md-3 product simpleCart_shelfItem text-center">
-                <a href="single.html"><img src="~/images/p7.jpg" height="250" width="100" alt="" /></a>
-                <div class="mask">
-                    <a href="single.html">Quick View</a>
-                </div>
-                <a class="product_name" href="single.html">Neque porro</a>
-                <p><a class="item_add" href="#"><i></i> <span class="item_price">$380</span></a></p>
-            </div>
-            <div class="col-md-3 product simpleCart_shelfItem text-center">
-                <a href="single.html"><img src="~/images/p8.jpg" height="250" width="100" alt="" /></a>
-                <div class="mask">
-                    <a href="single.html">Quick View</a>
-                </div>
-                <a class="product_name" href="single.html">perfectly simple</a>
-                <p><a class="item_add" href="#"><i></i> <span class="item_price">$540.6</span></a></p>
-            </div>
-            <div class="col-md-3 product simpleCart_shelfItem text-center">
-                <a href="single.html"><img src="~/images/p9.jpg" height="250" width="100" alt="" /></a>
-                <div class="mask">
-                    <a href="single.html">Quick View</a>
-                </div>
-                <a class="product_name" href="single.html">praising pain</a>
-                <p><a class="item_add" href="#"><i></i> <span class="item_price">$229.5</span></a></p>
-            </div>
+            <!-- End of Modal -->
+            }
+            
             <div class="clearfix"></div>
         </div>
     </div>

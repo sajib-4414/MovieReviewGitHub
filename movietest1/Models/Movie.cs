@@ -36,7 +36,9 @@ namespace movietest1.Models
         public string NamePosition { get; set; }
 
         public string DownloadLink { get; set; }
-        
+
+        [Required]
+        public DateTime PostedOn { get; set; }
         [Required]
         public string image { get; set; }
 

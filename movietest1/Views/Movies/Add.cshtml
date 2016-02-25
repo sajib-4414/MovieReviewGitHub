@@ -106,7 +106,9 @@
                             <li>@Html.EditorFor(model => model.DownloadLink, new { htmlAttributes = new { @class = "form-control" } })</li>
                            
                         </ul>
-                        
+                      @Html.HiddenFor(model => model.PostedOn, new {  Value = DateTime.Now })
+
+
                         <ul>
                             <li class="text-info">Uplad an Image:</li>
                             <li>@*Just setting a default value for skipping model errors*@

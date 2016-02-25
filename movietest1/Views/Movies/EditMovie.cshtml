@@ -19,7 +19,7 @@
                     {
                         @Html.AntiForgeryToken()
                         @Html.HiddenFor(model => model.key)
-
+                        @Html.HiddenFor(model => model.PostedOn)
                         <ul>
                             <li class="text-info">@Html.DisplayNameFor(model => model.Title)</li>
                             <li>@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", required = "" } })</li>

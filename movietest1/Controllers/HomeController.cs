@@ -1,4 +1,5 @@
-﻿using System;
+﻿using movietest1.Contexts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,11 @@ namespace movietest1.Controllers
 {
     public class HomeController : Controller
     {
+        private MovieContext db = new MovieContext();
         public ActionResult Index()
         {
-            return View();
+            var posts = db.Movies.OrderByDescending(a => a.PostedOn);
+            return View(posts.ToList());
         }
 
         public ActionResult About()
